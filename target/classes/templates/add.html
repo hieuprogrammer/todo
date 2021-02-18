@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TO-DOs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="icon" th:href="@{img/icon/todo.png}" type="image/gif" sizes="24x24">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center p-4">😃📒 TO-DOs 📒😃</h1>
+        <p th:text="${error}"></p>
+        <form th:action="@{/todos/new}" method="POST" th:object="${todoDto}">
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="task" class="form-label fw-bold">Task:</label>
+                        <input th:field="*{task}" type="text" class="form-control" id="task" aria-describedby="taskHelp">
+                        <div id="taskHelp" class="form-text">Task detail.</div>
+                    </div>
+                    <div class="col-6">
+                        <label for="status" class="form-label fw-bold">Status:</label>
+                        <select th:field="*{status}" class="form-select text-center" id="status" aria-label="statusHelp">
+                            <option th:each="status : ${T(dev.tech.domain.Status).values()}" th:value="${status}" th:text="${status.getStatus}">TO_DO</option>
+                        </select>
+                        <div id="statusHelp" class="form-text">Task status.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-lg btn-primary">Save</button>
+                <a th:href="@{/todos}" class="btn btn-lg btn-warning">Back</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
