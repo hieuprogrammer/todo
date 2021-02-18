@@ -16,4 +16,14 @@ public class HomeController {
     public String swagger() {
         return "redirect:/swagger-ui.html";
     }
+
+    @GetMapping("/403")
+    public String _403() {
+        return "403";
+    }
+
+    @GetMapping("/404")
+    public String _404() {
+        return "404";
+    }
 }

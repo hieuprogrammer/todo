@@ -26,10 +26,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/todos", "/todos/new", "/todos/detail", "/todos/update", "/todos/delete", "/todos/delete-all").hasAnyRole("PROGRAMMER", "USER")
-                .antMatchers("/todos", "/todos/new", "/todos/detail").hasRole("USER")
-                .and().formLogin();
+                .antMatchers("/", "/todos").permitAll()
+                .antMatchers("/todos/new", "/todos/detail").hasAnyRole("PROGRAMMER", "USER")
+                .antMatchers("/**").hasRole("PROGRAMMER")
+                .and().formLogin().and().exceptionHandling().accessDeniedPage("/403");
     }
 
     @Bean

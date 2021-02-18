@@ -69,7 +69,7 @@ public class EmailServiceImpl implements EmailService {
         boolean multiPart = true;
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, multiPart, "utf-8");
 
-        String htmlMessage = "<h1 style=\"font-family: monospace; text-align: center;\">:D Hello, Spring E-Mail! :D</h1>";
+        String htmlMessage = "<div style=\"font-family: monospace; text-align: center;\"><h1>😃📒TO-DOs📒😃</h1><h2 >A new to-do is successfully added.</h2></div>";
         mimeMessage.setContent(htmlMessage, "text/html");
 
         mimeMessageHelper.setTo(EmailConstants.USERS_EMAILS);
