@@ -5,13 +5,15 @@
     <title>TO-DOs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="icon" th:href="@{img/icon/todo.png}" type="image/gif" sizes="24x24">
+<!--    <link rel="icon" th:href="@{img/icon/iconds8-todo.png}" type="image/gif" sizes="24x24">-->
+<!--    <link rel="icon" th:href="@{img/icon/iconds8-todo-1.png}" type="image/gif" sizes="24x24">-->
 </head>
 <body>
     <div class="container">
         <h1 class="display-1 text-center p-4">😃📒 TO-DOs 📒😃</h1>
         <table class="table table-bordered table-hover text-center table-dark">
             <thead>
-                <tr class="text-warning">
+                <tr class="text-warning fs-5">
                     <th>TASK</th>
                     <th>STATUS</th>
                     <th>ACTION</th>
@@ -22,7 +24,7 @@
                     <td colspan="3">You don't have any tasks. ☺</td>
                 </tr>
                 <tr th:each="todo : ${todos}">
-                    <td th:text="${todo.task}"></td>
+                    <td th:text="${todo.task}" class="fw-bold"></td>
                     <td th:text="${todo.status.getStatus()}"></td>
                     <td>
                         <a th:href="@{/todos/detail(id=${todo.id})}" class="btn btn-warning m-1">View</a>
