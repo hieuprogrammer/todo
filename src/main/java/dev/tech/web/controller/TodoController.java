@@ -4,10 +4,13 @@ import dev.tech.dto.mapper.TodoDto;
 import dev.tech.service.EmailService;
 import dev.tech.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/todos")
@@ -23,7 +26,23 @@ public class TodoController {
 
     @GetMapping
     public String getTodos(final Model model) {
-        model.addAttribute("todos", this.todoService.findAll());
+//        model.addAttribute("todos", this.todoService.findAll());
+//        return "index";
+
+        return this.getTodosPaginated(1, model);
+    }
+
+    @GetMapping("/{page}")
+    public String getTodosPaginated(@PathVariable(value = "page") int page, Model model) {
+        int size = 5;
+        Page<TodoDto> todosPaginated = this.todoService.findAllPaginated(page, size);
+        List<TodoDto> todos = todosPaginated.getContent();
+
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", todosPaginated.getTotalPages());
+        model.addAttribute("totalElements", todosPaginated.getTotalElements());
+        model.addAttribute("todos", todos);
+
         return "index";
     }
 

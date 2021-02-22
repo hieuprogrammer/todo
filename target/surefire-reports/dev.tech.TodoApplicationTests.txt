@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: dev.tech.TodoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.642 s - in dev.tech.TodoApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.59 s - in dev.tech.TodoApplicationTests

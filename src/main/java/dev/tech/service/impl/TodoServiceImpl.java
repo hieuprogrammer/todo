@@ -7,6 +7,9 @@ import dev.tech.dto.model.TodoMapper;
 import dev.tech.repository.TodoRepository;
 import dev.tech.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -91,6 +94,15 @@ public class TodoServiceImpl implements TodoService {
         }
 
         return null;
+    }
+
+    @Override
+    public Page<TodoDto> findAllPaginated(int page, int size) {
+        Pageable pageable = PageRequest.of(page - 1, size);
+        Page<Todo> todosPaginated = this.todoRepository.findAll(pageable);
+        Page<TodoDto> todoDtosPaginated = todosPaginated.map(element -> TodoMapper.toDto(element));
+
+        return todoDtosPaginated;
     }
 
     @Override

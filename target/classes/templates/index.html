@@ -26,6 +26,62 @@
                 </tr>
             </tbody>
         </table>
+<!--        <div th:if="${totalPages > 1}">-->
+<!--            <div class="row">-->
+<!--                <div class="col-2">-->
+<!--                    <a th:if="${currentPage > 1}" th:href="@{'/todos/' + ${1}}">First</a>-->
+<!--                    <span th:unless="${currentPage != 1}">First</span>-->
+<!--                </div>-->
+<!--                <div class="col-2">-->
+<!--                    <a th:if="${currentPage > 1}" th:href="@{'/todos/' + ${currentPage - 1}}">Previous</a>-->
+<!--                    <span th:unless="${currentPage != 1}">Previous</span>-->
+<!--                </div>-->
+<!--                <div class="col-4">-->
+<!--                    <span th:each="index: ${#numbers.sequence(1, totalPages)}">-->
+<!--                        <a th:if="${currentPage != index}" th:href="@{'/todos/' + ${index}}">[[${index}]]</a>-->
+<!--                        <span th:unless="${currentPage != index}">[[${index}]]</span>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--                <div class="col-2">-->
+<!--                    <a th:if="${currentPage < totalPages}" th:href="@{'/todos/' + ${currentPage + 1}}">Next</a>-->
+<!--                    <span th:unless="${currentPage < totalPages}">Next</span>-->
+<!--                </div>-->
+<!--                <div class="col-2">-->
+<!--                    <a th:if="${currentPage < totalPages}" th:href="@{'/todos/' + ${totalPages}}">Last</a>-->
+<!--                    <span th:unless="${currentPage < totalPages}">Last</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a th:if="${currentPage > 1}"
+                       th:href="@{'/todos/' + ${currentPage - 1}}"
+                       class="page-link"
+                       aria-label="Previous"
+                    >
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    <span th:unless="${currentPage != 1}" class="page-link text-body" aria-hidden="true">&laquo;</span>
+                </li>
+                <li th:each="index: ${#numbers.sequence(1, totalPages)}" class="page-item">
+                    <a th:if="${currentPage != index}"
+                       th:href="@{'/todos/' + ${index}}"
+                       class="page-link">[[${index}]]</a>
+                    <span th:unless="${currentPage != index}" class="page-link" aria-hidden="true">[[${index}]]</span>
+                </li>
+                <li class="page-item">
+                    <a th:if="${currentPage < totalPages}"
+                       th:href="@{'/todos/' + ${currentPage + 1}}"
+                       class="page-link"
+                       aria-label="Next"
+                    >
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    <span th:unless="${currentPage < totalPages}" class="page-link text-body" aria-hidden="true">&raquo;</span>
+                </li>
+            </ul>
+        </nav>
         <div class="d-grid gap-2 mb-3">
             <a th:href="@{/todos/new}" class="btn btn-lg btn-primary">Add To-do</a>
         </div>

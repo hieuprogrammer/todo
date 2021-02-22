@@ -2,6 +2,7 @@ package dev.tech.service;
 
 import dev.tech.domain.Status;
 import dev.tech.dto.mapper.TodoDto;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -15,6 +16,8 @@ public interface TodoService {
     List<TodoDto> findByStatus(Status status);
 
     List<TodoDto> findAll();
+
+    Page<TodoDto> findAllPaginated(int page, int size);
 
     TodoDto update(Long id, TodoDto todoDto);
 
