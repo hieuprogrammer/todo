@@ -34,7 +34,7 @@ public class TodoController {
 
     @GetMapping("/{page}")
     public String getTodosPaginated(@PathVariable(value = "page") int page, Model model) {
-        int size = 5;
+        int size = 7;
         Page<TodoDto> todosPaginated = this.todoService.findAllPaginated(page, size);
         List<TodoDto> todos = todosPaginated.getContent();
 
