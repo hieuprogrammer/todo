@@ -26,8 +26,8 @@ public class EmailServiceImpl implements EmailService {
     public String sendEmail() {
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(EmailConstants.USERS_EMAILS);
-        simpleMailMessage.setSubject("Testing Spring E-Mail");
-        simpleMailMessage.setText(":D Hello, Spring E-Mail! :D");
+        simpleMailMessage.setSubject(":D TO-DOs :D");
+        simpleMailMessage.setText(":D A new to-do is successfully created. :D");
 
         try {
             this.javaMailSender.send(simpleMailMessage);
@@ -44,8 +44,8 @@ public class EmailServiceImpl implements EmailService {
 
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, multiPart);
         mimeMessageHelper.setTo(EmailConstants.USERS_EMAILS);
-        mimeMessageHelper.setSubject("Testing Spring E-Mail - Email with Attachments");
-        mimeMessageHelper.setText(":D Hello, Spring E-Mail! :D");
+        mimeMessageHelper.setSubject(":D TO-DOs :D");
+        mimeMessageHelper.setText(":D A new to-do is successfully created. :D");
 
         String pathToFile0 = "/D:/Testing Spring E-Mail/HelloWorldInJava.txt";
         String pathToFile1 = "/D:/Testing Spring E-Mail/HelloWorldInC#.txt";
@@ -73,7 +73,7 @@ public class EmailServiceImpl implements EmailService {
         mimeMessage.setContent(htmlMessage, "text/html");
 
         mimeMessageHelper.setTo(EmailConstants.USERS_EMAILS);
-        mimeMessageHelper.setSubject("Testing Spring E-Mail - Email with HTML Content");
+        mimeMessageHelper.setSubject(":D TO-DOs :D");
 
         try {
             this.javaMailSender.send(mimeMessage);
