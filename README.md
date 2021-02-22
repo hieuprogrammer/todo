@@ -12,3 +12,5 @@ From the project directory, inside a terminal, run command: `java -jar target/to
 ![img_3.png](img_3.png)
 
 ![img_4.png](img_4.png)
+
+Created by [Hieu Minh Le](https://www.facebook.com/hieuprogrammer).
