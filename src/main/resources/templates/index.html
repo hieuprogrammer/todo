@@ -5,9 +5,13 @@
         <h1 class="display-1 text-center p-4 pt-3">😃📒 TO-DOs 📒😃</h1>
         <table class="table table-bordered table-hover text-center table-dark">
             <thead>
-                <tr class="text-warning fs-5 text-decoration-none">
-                    <th><a th:href="@{'/todos/' + ${currentPage} + '?sortField=task&sortDirection=' + ${reverseSortDirection}}">TASK</a></th>
-                    <th><a th:href="@{'/todos/' + ${currentPage} + '?sortField=status&sortDirection=' + ${reverseSortDirection}}">STATUS</a></th>
+                <tr class="text-warning fs-5">
+                    <th>
+                        <a th:href="@{'/todos/' + ${currentPage} + '?sortField=task&sortDirection=' + ${reverseSortDirection}}" class="text-decoration-none text-warning">TASK</a>
+                    </th>
+                    <th>
+                        <a th:href="@{'/todos/' + ${currentPage} + '?sortField=status&sortDirection=' + ${reverseSortDirection}}" class="text-decoration-none text-warning">STATUS</a>
+                    </th>
                     <th>ACTIONS</th>
                 </tr>
             </thead>
