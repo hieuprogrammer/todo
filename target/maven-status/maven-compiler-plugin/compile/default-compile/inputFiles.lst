@@ -6,7 +6,6 @@ D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ I
 D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\config\EmailConfig.java
 D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\repository\TodoRepository.java
 D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\service\impl\EmailServiceImpl.java
-D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\web\controller\SimpleEmailController.java
 D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\dto\mapper\TodoDto.java
 D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\dto\model\TodoMapper.java
 D:\Hieu\Computer_Programming\Computer_Programs\Java\Todo App (Spring)\IntelliJ IDEA\todo\src\main\java\dev\tech\service\impl\TodoServiceImpl.java

@@ -99,7 +99,7 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public Page<TodoDto> findAllPaginated(int page, int size, String sortField, String sortDirection) {
-    	Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() : Sort.by(sortField).descending();
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() : Sort.by(sortField).descending();
         Pageable pageable = PageRequest.of(page - 1, size, sort);
         Page<Todo> todosPaginated = this.todoRepository.findAll(pageable);
         Page<TodoDto> todoDtosPaginated = todosPaginated.map(element -> TodoMapper.toDto(element));

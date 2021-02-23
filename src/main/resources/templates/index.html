@@ -6,9 +6,9 @@
         <table class="table table-bordered table-hover text-center table-dark">
             <thead>
                 <tr class="text-warning fs-5">
-                    <th><a th:href="@{/todos/} + ${currentPage} + '?sortField=task&sortDirection=' + ${reverseSortDirection}" class="text-decoration-none text-warning">TASK</a></th>
-                    <th><a th:href="@{/todos/} + ${currentPage} + '?sortField=status&sortDirection=' + ${reverseSortDirection}" class="text-decoration-none text-warning">STATUS</a></th>
-                    <th>ACTION</th>
+                    <th><a th:href="@{'/todos/' + ${currentPage} + '?sortField=task&sortDirection=' + ${reverseSortDirection}}" class="text-decoration-none text-warning">TASK</a></th>
+                    <th><a th:href="@{'/todos/' + ${currentPage} + '?sortField=status&sortDirection=' + ${reverseSortDirection}}" class="text-decoration-none text-warning">STATUS</a></th>
+                    <th>ACTIONS</th>
                 </tr>
             </thead>
             <tbody class="text-white">

@@ -19,7 +19,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/todo
     username: postgres
-    password: 
+    password:
 #  security:
 #    user:
 #      name: hieu
