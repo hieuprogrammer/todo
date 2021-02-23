@@ -17,7 +17,7 @@ public interface TodoService {
 
     List<TodoDto> findAll();
 
-    Page<TodoDto> findAllPaginated(int page, int size);
+    Page<TodoDto> findAllPaginated(int page, int size, String sortField, String sortDirection);
 
     TodoDto update(Long id, TodoDto todoDto);
 

@@ -29,18 +29,26 @@ public class TodoController {
 //        model.addAttribute("todos", this.todoService.findAll());
 //        return "index";
 
-        return this.getTodosPaginated(1, model);
+        return this.getTodosPaginated(1, "task", "asc", model);
     }
 
     @GetMapping("/{page}")
-    public String getTodosPaginated(@PathVariable(value = "page") int page, Model model) {
+    public String getTodosPaginated(
+    		final @PathVariable(value = "page") int page,
+    		final @RequestParam("sortField") String sortField,
+    		final @RequestParam("sortDirection") String sortDirection,
+    		final Model model
+	) {
         int size = 7;
-        Page<TodoDto> todosPaginated = this.todoService.findAllPaginated(page, size);
+        Page<TodoDto> todosPaginated = this.todoService.findAllPaginated(page, size, sortField, sortDirection);
         List<TodoDto> todos = todosPaginated.getContent();
 
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", todosPaginated.getTotalPages());
         model.addAttribute("totalElements", todosPaginated.getTotalElements());
+        model.addAttribute("sortField", sortField);
+        model.addAttribute("sortDirection", sortDirection);
+        model.addAttribute("reverseSortDirection", sortDirection.equals("asc") ? "desc" : "asc");
         model.addAttribute("todos", todos);
 
         return "index";
