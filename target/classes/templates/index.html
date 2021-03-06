@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody class="text-white">
-                <tr th:if="${todos == null}">
+                <tr th:if="${todos.size() == 0}">
                     <td colspan="3">You don't have any tasks. ☺</td>
                 </tr>
                 <tr th:each="todo : ${todos}">
@@ -68,8 +68,8 @@
                     </a>
                     <span th:unless="${currentPage != 1}" class="page-link text-body" aria-hidden="true">&laquo;</span>
                 </li>
-                <li th:each="index: ${#numbers.sequence(1, totalPages)}" class="page-item">
-                    <a th:if="${currentPage != index}"
+                <li th:each="index: ${#numbers.sequence(0, totalPages)}" class="page-item">
+                    <a th:if="${currentPage != index && index != 0}"
                        th:href="@{'/todos/' + ${index} + '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection}}"
                        class="page-link">[[${index}]]</a>
                     <span th:unless="${currentPage != index}" class="page-link" aria-hidden="true">[[${index}]]</span>

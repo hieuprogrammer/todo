@@ -14,7 +14,7 @@
     <name>todo</name>
     <description>Todo Web Application</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
         <jsonwebtoken.version>0.9.1</jsonwebtoken.version>
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
     </properties>
@@ -105,11 +105,11 @@
 <!--            <artifactId>mysql-connector-java</artifactId>-->
 <!--            <scope>runtime</scope>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.postgresql</groupId>-->
+<!--            <artifactId>postgresql</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
