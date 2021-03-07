@@ -2,6 +2,8 @@ package dev.tech.service.impl;
 
 import dev.tech.service.EmailService;
 import dev.tech.util.email.EmailConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
@@ -15,6 +17,7 @@ import java.io.File;
 
 @Service
 public class EmailServiceImpl implements EmailService {
+    private final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
     private final JavaMailSender javaMailSender;
 
     @Autowired
@@ -24,6 +27,12 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public String sendEmail() {
+        this.logger.info("INFO: E-Mail Service - sendEmail() method called.");
+        this.logger.debug("DEBUG: E-Mail Service - sendEmail() method called.");
+        this.logger.trace("TRACE: E-Mail Service - sendEmail() method called.");
+        this.logger.warn("WARN: E-Mail Service - sendEmail() method called.");
+        this.logger.error("ERROR: E-Mail Service - sendEmail() method called.");
+
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(EmailConstants.USERS_EMAILS);
         simpleMailMessage.setSubject(":D TO-DOs :D");
@@ -39,6 +48,12 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public String sendEmailWithAttachments() throws MessagingException {
+        this.logger.info("INFO: E-Mail Service - sendEmailWithAttachments() method called.");
+        this.logger.debug("DEBUG: E-Mail Service - sendEmailWithAttachments() method called.");
+        this.logger.trace("TRACE: E-Mail Service - sendEmailWithAttachments() method called.");
+        this.logger.warn("WARN: E-Mail Service - sendEmailWithAttachments() method called.");
+        this.logger.error("ERROR: E-Mail Service - sendEmailWithAttachments() method called.");
+
         MimeMessage mimeMessage = this.javaMailSender.createMimeMessage();
         boolean multiPart = true;
 
@@ -65,6 +80,12 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public String sendEmailWithHtmlContent() throws MessagingException {
+        this.logger.info("INFO: E-Mail Service - sendEmailWithHtmlContent() method called.");
+        this.logger.debug("DEBUG: E-Mail Service - sendEmailWithHtmlContent() method called.");
+        this.logger.trace("TRACE: E-Mail Service - sendEmailWithHtmlContent() method called.");
+        this.logger.warn("WARN: E-Mail Service - sendEmailWithHtmlContent() method called.");
+        this.logger.error("ERROR: E-Mail Service - sendEmailWithHtmlContent() method called.");
+
         MimeMessage mimeMessage = this.javaMailSender.createMimeMessage();
         boolean multiPart = true;
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, multiPart, "utf-8");
