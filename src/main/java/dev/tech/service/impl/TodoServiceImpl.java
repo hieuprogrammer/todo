@@ -34,7 +34,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - addTodo() method called.");
         this.logger.trace("TRACE: Todo Service - addTodo() method called.");
         this.logger.warn("WARN: Todo Service - addTodo() method called.");
-        this.logger.warn("ERROR: Todo Service - addTodo() method called.");
+        this.logger.error("ERROR: Todo Service - addTodo() method called.");
 
         try {
             this.todoRepository.save(TodoMapper.toEntity(todoDto));
@@ -49,7 +49,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - findById() method called.");
         this.logger.trace("TRACE: Todo Service - findById() method called.");
         this.logger.warn("WARN: Todo Service - findById() method called.");
-        this.logger.warn("ERROR: Todo Service - findById() method called.");
+        this.logger.error("ERROR: Todo Service - findById() method called.");
 
         try {
             return TodoMapper.toDto(this.todoRepository.findById(id).get());
@@ -65,7 +65,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - findByStatus() method called.");
         this.logger.trace("TRACE: Todo Service - findByStatus() method called.");
         this.logger.warn("WARN: Todo Service - findByStatus() method called.");
-        this.logger.warn("ERROR: Todo Service - findByStatus() method called.");
+        this.logger.error("ERROR: Todo Service - findByStatus() method called.");
 
         try {
             List<Todo> todos = this.todoRepository.findByStatus(status);
@@ -88,7 +88,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - findByTask() method called.");
         this.logger.trace("TRACE: Todo Service - findByTask() method called.");
         this.logger.warn("WARN: Todo Service - findByTask() method called.");
-        this.logger.warn("ERROR: Todo Service - findByTask() method called.");
+        this.logger.error("ERROR: Todo Service - findByTask() method called.");
 
         if (this.todoRepository.findByTask(task) != null) {
             try {
@@ -109,7 +109,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - findAll() method called.");
         this.logger.trace("TRACE: Todo Service - findAll() method called.");
         this.logger.warn("WARN: Todo Service - findAll() method called.");
-        this.logger.warn("ERROR: Todo Service - findAll() method called.");
+        this.logger.error("ERROR: Todo Service - findAll() method called.");
 
         if (this.todoRepository.findAll().isEmpty()) {
             return null;
@@ -136,7 +136,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - findAllPaginated() method called.");
         this.logger.trace("TRACE: Todo Service - findAllPaginated() method called.");
         this.logger.warn("WARN: Todo Service - findAllPaginated() method called.");
-        this.logger.warn("ERROR: Todo Service - findAllPaginated() method called.");
+        this.logger.error("ERROR: Todo Service - findAllPaginated() method called.");
 
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() : Sort.by(sortField).descending();
         Pageable pageable = PageRequest.of(page - 1, size, sort);
@@ -152,7 +152,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - update() method called.");
         this.logger.trace("TRACE: Todo Service - update() method called.");
         this.logger.warn("WARN: Todo Service - update() method called.");
-        this.logger.warn("ERROR: Todo Service - update() method called.");
+        this.logger.error("ERROR: Todo Service - update() method called.");
 
         if (this.todoRepository.findById(id) != null) {
             try {
@@ -179,7 +179,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - deleteById() method called.");
         this.logger.trace("TRACE: Todo Service - deleteById() method called.");
         this.logger.warn("WARN: Todo Service - deleteById() method called.");
-        this.logger.warn("ERROR: Todo Service - deleteById() method called.");
+        this.logger.error("ERROR: Todo Service - deleteById() method called.");
 
         if (this.todoRepository.findById(id) != null) {
             try {
@@ -196,7 +196,7 @@ public class TodoServiceImpl implements TodoService {
         this.logger.debug("DEBUG: Todo Service - deleteAll() method called.");
         this.logger.trace("TRACE: Todo Service - deleteAll() method called.");
         this.logger.warn("WARN: Todo Service - deleteAll() method called.");
-        this.logger.warn("ERROR: Todo Service - deleteAll() method called.");
+        this.logger.error("ERROR: Todo Service - deleteAll() method called.");
 
         if (!this.todoRepository.findAll().isEmpty()) {
             try {
