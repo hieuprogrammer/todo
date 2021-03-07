@@ -1,3 +1,6 @@
+# LOGGING CONFIGURATION:
+logging.level.root: trace
+
 # H2 DATABASE CONFIGURATION:
 spring:
   datasource:

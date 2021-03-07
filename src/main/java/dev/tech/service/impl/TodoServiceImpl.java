@@ -20,6 +20,7 @@ import java.util.List;
 
 @Service
 public class TodoServiceImpl implements TodoService {
+    private final Logger logger = LoggerFactory.getLogger(TodoServiceImpl.class);
     private final TodoRepository todoRepository;
 
     @Autowired
@@ -29,6 +30,12 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public void addTodo(TodoDto todoDto) {
+        this.logger.info("INFO: addTodo() method called.");
+        this.logger.debug("DEBUG: addTodo() method called.");
+        this.logger.trace("TRACE : addTodo() method called.");
+        this.logger.warn("WARN: addTodo() method called.");
+        this.logger.warn("ERROR: addTodo() method called.");
+
         try {
             this.todoRepository.save(TodoMapper.toEntity(todoDto));
         } catch (Exception exception) {
