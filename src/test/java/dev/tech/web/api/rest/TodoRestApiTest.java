@@ -1,10 +1,10 @@
-package dev.tech.web.api;
+package dev.tech.web.api.rest;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TodoApiTest {
+public class TodoRestApiTest {
     @Before
     public void setUp() throws Exception {
     }
