@@ -1,11 +1,12 @@
-dev\tech\web\api\TodoApi.class
 dev\tech\web\controller\TodoController.class
 dev\tech\domain\Todo.class
 dev\tech\config\AppConfig.class
 dev\tech\config\OpenApiConfig.class
+dev\tech\web\api\rest\TodoRestApi.class
 dev\tech\config\EmailConfig.class
 dev\tech\domain\Status.class
 dev\tech\service\EmailService.class
+dev\tech\web\api\soap\TodoSoapApi.class
 dev\tech\dto\mapper\TodoDto.class
 dev\tech\TodoApplication.class
 dev\tech\util\email\EmailConstants.class

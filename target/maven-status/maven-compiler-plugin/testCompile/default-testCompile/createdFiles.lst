@@ -1,5 +1,6 @@
+dev\tech\web\api\soap\TodoSoapApiTest.class
 dev\tech\repository\TodoRepositoryTest.class
 dev\tech\TodoApplicationTests.class
-dev\tech\web\api\TodoApiTest.class
+dev\tech\web\api\rest\TodoRestApiTest.class
 dev\tech\service\impl\TodoServiceImplTest.class
 dev\tech\web\controller\TodoControllerTest.class

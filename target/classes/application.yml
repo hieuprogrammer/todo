@@ -9,6 +9,7 @@ spring:
     url: jdbc:h2:mem:todo
     username: sa
   jpa:
+    database: h2
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     properties:
@@ -19,10 +20,14 @@ spring:
 # POSTGRESQL DATABASE CONFIGURATION:
 #spring:
 #  jpa:
+#    database: postgresql
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
 #    hibernate:
 #      ddl-auto: update
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    database: postgresql
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
 #  datasource:
 #    url: jdbc:postgresql://localhost:5432/todo
 #    username: postgres
