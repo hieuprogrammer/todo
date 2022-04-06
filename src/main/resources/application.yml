@@ -1,7 +1,7 @@
 # LOGGING CONFIGURATION:
 logging.level.root: trace
 
-# H2 DATABASE CONFIGURATION:
+# LOCAL H2 DATABASE CONFIGURATION:
 #spring:
 #  datasource:
 #    driverClassName: org.h2.Driver
@@ -17,7 +17,7 @@ logging.level.root: trace
 #        format_sql: true
 
 
-# POSTGRESQL DATABASE CONFIGURATION:
+# LOCAL POSTGRESQL DATABASE CONFIGURATION:
 spring:
   jpa:
     database: postgresql
