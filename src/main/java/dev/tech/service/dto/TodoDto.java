@@ -1,4 +1,4 @@
-package dev.tech.dto.mapper;
+package dev.tech.service.dto;
 
 import dev.tech.domain.Status;
 

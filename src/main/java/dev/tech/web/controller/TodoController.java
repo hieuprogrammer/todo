@@ -1,6 +1,6 @@
 package dev.tech.web.controller;
 
-import dev.tech.dto.mapper.TodoDto;
+import dev.tech.service.dto.TodoDto;
 import dev.tech.service.EmailService;
 import dev.tech.service.TodoService;
 import org.slf4j.Logger;

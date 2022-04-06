@@ -2,37 +2,38 @@
 logging.level.root: trace
 
 # H2 DATABASE CONFIGURATION:
-spring:
-  datasource:
-    driverClassName: org.h2.Driver
-    password: ''
-    url: jdbc:h2:mem:todo
-    username: sa
-  jpa:
-    database: h2
-    database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-
-
-# POSTGRESQL DATABASE CONFIGURATION:
 #spring:
+#  datasource:
+#    driverClassName: org.h2.Driver
+#    url: jdbc:h2:mem:todo
+#    username: sa
+#    password:
 #  jpa:
-#    database: postgresql
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    hibernate:
-#      ddl-auto: update
+#    database: h2
+#    database-platform: org.hibernate.dialect.H2Dialect
 #    show-sql: true
 #    properties:
 #      hibernate:
 #        format_sql: true
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/todo
-#    username: postgres
-#    password:
-##  security:
-##    user:
-##      name: hieu
-##      password: hieu
+
+
+# POSTGRESQL DATABASE CONFIGURATION:
+spring:
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/todo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+#  security:
+#    user:
+#      name: hieu
+#      password: hieu

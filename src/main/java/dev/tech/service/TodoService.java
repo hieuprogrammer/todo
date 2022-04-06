@@ -1,7 +1,7 @@
 package dev.tech.service;
 
 import dev.tech.domain.Status;
-import dev.tech.dto.mapper.TodoDto;
+import dev.tech.service.dto.TodoDto;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

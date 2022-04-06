@@ -1,7 +1,7 @@
-package dev.tech.dto.model;
+package dev.tech.service.mapper;
 
 import dev.tech.domain.Todo;
-import dev.tech.dto.mapper.TodoDto;
+import dev.tech.service.dto.TodoDto;
 
 public class TodoMapper {
     public static TodoDto toDto(Todo todo) {

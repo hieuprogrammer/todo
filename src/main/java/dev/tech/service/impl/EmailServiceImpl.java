@@ -1,7 +1,7 @@
 package dev.tech.service.impl;
 
 import dev.tech.service.EmailService;
-import dev.tech.util.email.EmailConstants;
+import dev.tech.service.util.email.EmailConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package dev.tech.config;
 
-import dev.tech.util.email.EmailConstants;
+import dev.tech.service.util.email.EmailConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;

@@ -1,0 +1,8 @@
+{
+  "name": "spring-mvc-todo-app",
+  "buildpacks": [
+    {
+      "url": "heroku/maven"
+    }
+  ]
+}

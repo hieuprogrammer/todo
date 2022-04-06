@@ -2,8 +2,8 @@ package dev.tech.service.impl;
 
 import dev.tech.domain.Status;
 import dev.tech.domain.Todo;
-import dev.tech.dto.mapper.TodoDto;
-import dev.tech.dto.model.TodoMapper;
+import dev.tech.service.dto.TodoDto;
+import dev.tech.service.mapper.TodoMapper;
 import dev.tech.repository.TodoRepository;
 import dev.tech.service.TodoService;
 import org.slf4j.Logger;

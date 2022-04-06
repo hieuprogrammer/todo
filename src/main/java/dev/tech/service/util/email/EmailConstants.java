@@ -1,4 +1,4 @@
-package dev.tech.util.email;
+package dev.tech.service.util.email;
 
 public class EmailConstants {
     public static final String SYSTEM_DEVELOPER_GMAIL = "hieucomputerprogrammer@gmail.com";

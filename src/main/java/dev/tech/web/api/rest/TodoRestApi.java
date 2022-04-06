@@ -1,7 +1,7 @@
 package dev.tech.web.api.rest;
 
 import dev.tech.domain.Status;
-import dev.tech.dto.mapper.TodoDto;
+import dev.tech.service.dto.TodoDto;
 import dev.tech.service.TodoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
